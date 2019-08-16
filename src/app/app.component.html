@@ -1,0 +1,364 @@
+<!-- Button -->
+<div>
+    <button mat-button>Hellow</button>
+    <button mat-raised-button>Hellow</button>
+    <button mat-icon-button>Hellow</button>
+    <button mat-fab>Hellow</button>
+</div>
+<div>
+    <button color="primary" mat-raised-button>Hellow</button>
+</div>
+
+<div>
+    <mat-icon color="primary">info</mat-icon>
+</div>
+
+<mat-divider></mat-divider>
+
+<!-- Notification -->
+<div>
+    <span matBadge="10" matBadgePosition="above before" matBadgeSize="small" matBadgeColor="warn">Notification</span><br><br><br>
+    <span matBadge="10" matBadgePosition="above after" matBadgeSize="large" matBadgeOverlap="false">Notification</span>
+</div>
+
+<mat-divider></mat-divider>
+
+<!-- ProgressBar -->
+<div>
+    <!-- <button mat-raised-button (click)="startSpinnerIs()">Click</button> -->
+    <mat-progress-spinner value="50"></mat-progress-spinner>
+    <mat-progress-spinner [(value)]="progressValue"></mat-progress-spinner>
+    <!-- {{progressValue}} -->
+    <!-- <mat-spinner></mat-spinner> -->
+</div>
+
+<mat-divider></mat-divider>
+
+<!-- Toolbar -->
+<div>
+    <mat-toolbar color="primary" class="navbar">
+        <div>Home</div>
+        <div>
+            <span>Setting</span>
+            <span>Contact</span>
+            <span>Logout</span>
+        </div>
+    </mat-toolbar>
+</div>
+
+<mat-divider></mat-divider>
+
+<!-- SideNav -->
+<mat-sidenav-container>
+    <!-- <mat-sidenav mode="over" [(opened)]="opened">
+    <mat-sidenav mode="push" [(opened)]="opened"> -->
+        
+    <mat-sidenav (opened)="openedState('opened')" (closed)="closedState('closed')" #sidenav mode="side" [(opened)]="opened">
+        Sidenav
+    </mat-sidenav>
+
+    <!-- <mat-sidenav (opened)="!btnStatus ? btnState='Close' : btnState='Open'" (closed)="!btnStatus ? btnState='Open' : btnState='Close'" #sidenav mode="side" [(opened)]="opened">
+        Sidenav
+    </mat-sidenav> -->
+
+    <mat-sidenav-content>
+        <button color="primary" mat-fab (click)="sidenav.toggle()">{{btnState}}</button>
+        <!-- Main Content...
+        <button (click)="opened=!opened">Open</button> -->
+        
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+<mat-divider></mat-divider>
+
+<!-- Menu -->
+<mat-menu #menuTab="matMenu" xPosition="after" yPosition="below">
+    <button mat-menu-item [matMenuTriggerFor]="atulMenu">atul</button>
+    <button mat-menu-item>sagar</button>
+    <button mat-menu-item>sarthak</button>
+</mat-menu>
+<button mat-raised-button [matMenuTriggerFor]="menuTab">Menu</button>
+
+<mat-divider></mat-divider>
+
+<!-- Mat sub menu -->
+<mat-menu #atulMenu="matMenu">
+    <button mat-menu-item>bcs</button>
+    <button mat-menu-item>mcs</button>
+    <button mat-menu-item>job</button>
+</mat-menu>
+
+<mat-divider></mat-divider>
+
+<!-- List -->
+<mat-list>
+    <mat-list-item>
+        <mat-icon matListIcon>home</mat-icon>
+        <p matLine>Home</p>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>
+        <mat-icon matListIcon>folder</mat-icon>
+        <p matLine>Folder</p>
+    </mat-list-item>
+</mat-list>
+
+<mat-divider></mat-divider>
+
+<!-- Grid List -->
+<!-- <mat-grid-list cols="4" rowHeight="100px"> -->
+<mat-grid-list cols="4" rowHeight="2:1" gutterSize="10px">
+    <mat-grid-tile colspan="4">1</mat-grid-tile>
+    <mat-grid-tile>2</mat-grid-tile>
+    <mat-grid-tile>3</mat-grid-tile>
+    <mat-grid-tile>4</mat-grid-tile>
+    <mat-grid-tile>5</mat-grid-tile>
+</mat-grid-list>
+
+<mat-divider></mat-divider>
+
+<!-- Expansion panel -->
+<mat-accordion>
+<!-- <mat-accordion multi="true" hideToggle> -->
+    <mat-expansion-panel *ngFor="let item of array">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                {{item.name}}
+            </mat-panel-title>
+            <mat-panel-description>
+                {{item.mobile}}
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>
+            {{item.name}} | {{item.mobile}}
+        </p>
+        <mat-action-row>
+            <button mat-raised-button>Enroll</button>
+        </mat-action-row>
+    </mat-expansion-panel>
+</mat-accordion>
+
+<mat-divider></mat-divider>
+
+<!-- Cards -->
+<div>
+    <mat-card>
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            A121
+        </mat-card-header>
+        <mat-card-title>
+            Atul Pisal
+        </mat-card-title>
+        <mat-card-content>
+            atul pisal... 
+        </mat-card-content>
+        <img src="https://firebasestorage.googleapis.com/v0/b/nodejswithfirebase-1b049.appspot.com/o/messi.jpg?alt=media&token=2893bacd-d9e5-4337-a4c8-43df9d2aa793" alt="">
+        <mat-card-actions align="end">
+            <button mat-raised-button>Login</button>
+        </mat-card-actions>
+    </mat-card>
+    <mat-card>
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            A121
+        </mat-card-header>
+        <mat-card-title>
+            Atul Pisal
+        </mat-card-title>
+        <mat-card-content>
+            atul pisal... 
+        </mat-card-content>
+        <img src="https://firebasestorage.googleapis.com/v0/b/nodejswithfirebase-1b049.appspot.com/o/messi.jpg?alt=media&token=2893bacd-d9e5-4337-a4c8-43df9d2aa793" alt="">
+        <mat-card-actions align="end">
+            <button mat-raised-button>Login</button>
+        </mat-card-actions>
+    </mat-card>
+</div>
+
+<mat-divider></mat-divider>
+
+<!-- Tabs -->
+<mat-tab-group #tabRef (selectedTabChange)="chageTab(tabRef.selectedIndex)">
+    <mat-tab label="Home">Home</mat-tab>
+    <mat-tab label="Setting">Setting</mat-tab>
+    <mat-tab label="Contact">Contact</mat-tab>
+</mat-tab-group>
+
+<mat-divider></mat-divider>
+
+<!-- stepper -->
+<!-- <mat-horizontal-stepper linear> -->
+<mat-vertical-stepper linear>
+    <mat-step label="a121" completed=true>
+        <p>atul pisal...</p>
+    </mat-step>
+    <mat-step label="a1n1" completed=false optional>
+        <p>shankar pisal...</p>
+    </mat-step>
+    <mat-step label="a1s1" completed=false>
+        <p>antully pisal...</p>
+    </mat-step>
+<!-- </mat-horizontal-stepper> -->
+</mat-vertical-stepper>
+
+<mat-divider></mat-divider>
+
+<!-- form -->
+<!-- <mat-form-field floatLabel="never"> -->
+<!-- <mat-form-field floatLabel="always"> -->
+<!-- <mat-form-field floatLabel="never" hideRequiredMarker> -->
+<!-- <mat-form-field floatLabel="auto" appearance="legacy"> -->
+<!-- <mat-form-field floatLabel="auto" appearance="standard"> -->
+<!-- <mat-form-field floatLabel="auto" appearance="outline" color="warn"> -->
+<mat-form-field floatLabel="auto" appearance="fill" color="accent">
+    <mat-label>Name</mat-label>
+    <input matInput required>
+    <mat-hint align="end">alteat 10 charactes...</mat-hint>
+</mat-form-field>
+
+<mat-divider></mat-divider>
+
+<!-- select -->
+<mat-form-field>
+    <mat-label>Topic</mat-label>
+    <!-- <mat-select [(value)]="selectedValue"> -->
+    <mat-select [(value)]="selectedValue" multiple>
+        <mat-option>Select</mat-option>
+        <mat-option value="atul">atul</mat-option>
+        <mat-option value="a121">a121</mat-option>
+        <mat-option value="a1n1">a1n1</mat-option>
+        <mat-optgroup label="UserName">
+            <mat-option value="atul">atul</mat-option>
+            <mat-option value="a121">a121</mat-option>
+            <mat-option value="a1n1">a1n1</mat-option>
+        </mat-optgroup>
+    </mat-select>
+</mat-form-field>
+{{selectedValue}}
+
+<mat-divider></mat-divider>
+
+<!-- Autocomplete -->
+<form>
+    <!-- no filter -->
+    <mat-form-field>
+        <mat-label>Topic</mat-label>
+        <input type="text" matInput [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let item of itemArray" [value]="item">
+                {{item}}
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+    &nbsp;
+
+    <!-- using filter -->
+    <!-- <mat-form-field>
+        <mat-label>Topic</mat-label>
+        <input type="text" matInput [matAutocomplete]="auto" [formControl]="myFormControl">
+        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+            <mat-option *ngFor="let item of filterOption | async" [value]="item">
+                {{item}}
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field> -->
+</form>
+
+<mat-divider></mat-divider>
+
+<!-- Checkbox -->
+<div>
+    <mat-checkbox>Atul Pisal...</mat-checkbox> &nbsp;
+    <mat-checkbox color="primary" labelPosition="before">Atul Pisal</mat-checkbox>
+</div>
+
+<mat-divider></mat-divider>
+
+<!-- Radio button -->
+<div>
+    <mat-radio-group>
+        <mat-radio-button value="atul pisal...">atul pisal...</mat-radio-button>
+        <mat-radio-button value="a121 pisal..." color="primary">a121 pisal...</mat-radio-button>
+    </mat-radio-group>
+</div>
+
+<mat-divider></mat-divider>
+
+<!-- Datepicker -->
+<mat-form-field>
+    <!-- min max date -->
+    <input type="text" matInput [matDatepicker]="myDatePicker" [min]="minDate" [max]="maxDate">
+    <!-- prevent saturday and sunday from selection -->
+    <!-- <input type="text" matInput [matDatepicker]="myDatePicker" [matDatepickerFilter]="dateFilter"> -->
+    <mat-datepicker-toggle [for]="myDatePicker" matSuffix></mat-datepicker-toggle>
+    <mat-datepicker #myDatePicker></mat-datepicker>
+    <!-- <mat-datepicker #myDatePicker startView="year"></mat-datepicker> -->
+    <!-- <mat-datepicker #myDatePicker startView="multi-year"></mat-datepicker> -->
+</mat-form-field>
+
+<mat-divider></mat-divider>
+
+<!-- Tooltip -->
+<div>
+    <button mat-raised-button matTooltip="hellow" matTooltipPosition="after" matTooltipShowDelay="1000" matTooltipHideDelay="1000">Hellow</button>
+</div>
+
+<mat-divider></mat-divider>
+
+<!-- Snackbar -->
+<div>
+    <!-- <button mat-raised-button (click)="openSnackBar('snack bar opened...','Dismiss')">Message</button> -->
+    <button mat-raised-button (click)="openSnackBar('snack bar opened...','Undo')">Message</button>
+    <button mat-raised-button (click)="openCustomSnackBar()">Custom SnackBar</button>
+</div>
+
+<mat-divider></mat-divider>
+
+<!-- Dialog -->
+<div>
+    <button mat-raised-button (click)="openDialog()">Dialog</button>
+</div>
+
+<mat-divider></mat-divider>
+
+<!-- Data table -->
+<div class="mat-elevation-z8">
+    <!-- Filtering -->
+    <mat-form-field>
+        <input matInput placeholder="Filter" (keyup)="applyFilter($event.target.value)">
+    </mat-form-field>
+    <mat-table [dataSource]="dataSource" matSort>
+        <!-- Position Column -->
+        <ng-container matColumnDef="position">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> No. </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+        </ng-container>
+        
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+        </ng-container>
+        
+        <!-- Weight Column -->
+        <ng-container matColumnDef="weight">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Weight </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+        </ng-container>
+        
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="symbol">
+            <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+        </ng-container>
+        
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row (click)="getData(row)" *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+    <mat-paginator [pageSizeOptions]="[5,10,15]" showFirstLastButtons></mat-paginator>
+</div>
+
+<div>
+    atul...
+</div>

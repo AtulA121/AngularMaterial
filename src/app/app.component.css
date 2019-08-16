@@ -1,0 +1,48 @@
+button {
+    margin: 10px;
+}
+
+div {
+    margin : 10px;
+}
+
+.navbar {
+    justify-content: space-between;
+}
+
+span {
+    padding-right: 10px;
+}
+
+mat-sidenav-container {
+    height: 100%;
+}
+
+mat-sidenav {
+    width: 20%;
+    padding: 10px;
+}
+
+mat-sidenav-container {
+    background-color: blueviolet;
+    width: 100%;
+}
+
+mat-grid-tile {
+    background-color: lightblue;
+}
+
+.example-header-image {
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/nodejswithfirebase-1b049.appspot.com/o/messi.jpg?alt=media&token=2893bacd-d9e5-4337-a4c8-43df9d2aa793");
+    background-size: cover;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+table {
+    width: 100%;
+  }
+  
